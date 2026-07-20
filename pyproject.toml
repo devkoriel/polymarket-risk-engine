@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "polymarket-risk-engine"
+version = "0.1.0"
+description = "The risk layer of a live Polymarket trading bot: Kelly sizing, circuit breakers, and ghost-fill defense. No strategies."
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Koriel" }]
+requires-python = ">=3.11"
+dependencies = []
+keywords = [
+    "polymarket",
+    "prediction-markets",
+    "risk-management",
+    "kelly-criterion",
+    "trading",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+]
+
+[tool.setuptools.packages.find]
+include = ["polymarket_risk*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
